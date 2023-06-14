@@ -10,6 +10,9 @@ for (const image of galleryItems) {
 
 gallery.addEventListener("click", (e) => {
   e.preventDefault();
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
   const instance = basicLightbox.create(
     `<img src="${e.target.dataset.source}"/>`
   );
